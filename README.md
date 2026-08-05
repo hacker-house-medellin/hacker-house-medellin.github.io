@@ -1,21 +1,9 @@
 # hacker-house-medellin.github.io
 
-Astro marketing site for **Hacker House Medellín**.
+Marketing, documentation, privacy, support, and public community guidance for Hacker House Medellin.
 
-- Built with Astro, not Jekyll.
-- Uses GitHub Pages Actions deployment.
-- Includes a responsive landing page, SEO metadata, favicon, proof points, workflow, integrations, architecture, and launch CTA.
-- `public/.nojekyll` is present only to bypass Jekyll processing on Pages; there is no Jekyll site or `_config.yml`.
-
-## Commands
+Initialized through `DEN-1950` as a testable `marketing` foundation. Product behavior continues through focused pull requests.
 
 ```bash
-npm install
-npm run dev
-npm run build
-npm test
+python3 scripts/verify_repo.py
 ```
-
-## Repository family
-
-The site links the public product narrative to the `hhm-clients`, `hhm-libs`, `hhm-monorepo`, and `hhm-infra` repositories. GitHub Pages deployment is handled by Actions; Jekyll is not used.
