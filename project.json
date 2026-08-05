@@ -1,0 +1,18 @@
+{
+  "bootstrap_date": "20260804",
+  "kind": "marketing",
+  "organization": "hacker-house-medellin",
+  "repository": "hacker-house-medellin.github.io",
+  "required_paths": [
+    ".github/workflows/ci.yml",
+    ".gitignore",
+    "astro.config.mjs",
+    "package.json",
+    "public/robots.txt",
+    "scripts/verify_repo.py",
+    "src/pages/index.astro"
+  ],
+  "schema_version": 1,
+  "tracking_issue": "DEN-1950",
+  "visibility": "public"
+}
