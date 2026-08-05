@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import VentureNetwork from '../components/VentureNetwork.astro';
 const year = new Date().getFullYear();
 ---
 <!doctype html>
@@ -40,7 +41,7 @@ const year = new Date().getFullYear();
     <main id="content" class="page-shell">
       <nav class="nav" aria-label="Primary">
         <a class="brand" href="#top" aria-label="Hacker House Medellín home"><span class="brand-mark" aria-hidden="true"></span><span>Hacker House Medellín</span></a>
-        <div class="nav-links"><a href="#platform">Platform</a><a href="#workflow">Workflow</a><a href="#principles">Principles</a><a href="#contact" class="nav-cta">Early access</a></div>
+        <div class="nav-links"><a href="#platform">Platform</a><a href="#workflow">Workflow</a><a href="#principles">Principles</a><a href="#network">Network</a><a href="#contact" class="nav-cta">Early access</a></div>
       </nav>
       <section id="top" class="hero section-grid">
         <div class="hero-copy">
@@ -83,6 +84,7 @@ const year = new Date().getFullYear();
         <div class="arch-card"><strong>Operations are visible</strong><span>Residents can understand schedules, access, responsibilities, safety information, and changes without chasing a host.</span></div>
         <div class="arch-card"><strong>Local context matters</strong><span>The experience is designed with Medellín’s neighborhoods, culture, logistics, and builder community in mind.</span></div>
       </section>
+      <VentureNetwork current="hacker-house-medellin" />
       <section id="contact" class="launch">
         <p class="eyebrow">Early access</p><h2>Plan a focused build week in Medellín.</h2><p>Share your project, preferred dates, working style, and what you hope to ship. Early applications will shape the first residency cohorts.</p>
         <div class="hero-actions" style="justify-content:center;"><a class="button primary" href="mailto:hello@hacker-house-medellin.com?subject=Hacker%20House%20Medell%C3%ADn%20build%20week">Apply for a build week</a><a class="button secondary" href="https://github.com/hacker-house-medellin" rel="me">Explore the GitHub organization</a></div>
