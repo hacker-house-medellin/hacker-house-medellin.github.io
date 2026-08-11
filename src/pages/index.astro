@@ -7,6 +7,10 @@ const body = document.match(/<body[^>]*>([\s\S]*?)<\/body>/i)?.[1] ?? '';
 
 <!doctype html>
 <html lang="en">
-  <head set:html={head}></head>
-  <body set:html={body}></body>
+  <head>
+    <Fragment set:html={head} />
+  </head>
+  <body>
+    <Fragment set:html={body} />
+  </body>
 </html>

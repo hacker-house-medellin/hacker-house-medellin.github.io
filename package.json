@@ -6,7 +6,7 @@
   "description": "Astro marketing site for Hacker House Medellín.",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/verify-built-site.mjs",
     "preview": "astro preview",
     "test": "node --test tests/*.test.mjs"
   },
