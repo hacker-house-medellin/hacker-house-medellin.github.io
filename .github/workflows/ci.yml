@@ -7,6 +7,9 @@ on:
 
 env:
   ASTRO_TELEMETRY_DISABLED: '1'
+  PUBLIC_HHAUS_API_ORIGIN: 'https://api.hhaus.org'
+  PUBLIC_HHAUS_SUPABASE_ORIGIN: 'https://bihpugkzayenywfyajnr.supabase.co'
+  PUBLIC_HHAUS_TURNSTILE_SITE_KEY: ${{ vars.HHAUS_TURNSTILE_SITE_KEY }}
 
 permissions:
   contents: read

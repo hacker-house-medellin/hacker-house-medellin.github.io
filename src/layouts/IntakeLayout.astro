@@ -1,0 +1,79 @@
+---
+import '../styles/intake.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  authenticatedPath?: string;
+  eyebrow: string;
+  heading: string;
+}
+
+const { title, description, canonicalPath, authenticatedPath = canonicalPath, eyebrow, heading } = Astro.props;
+const canonical = new URL(canonicalPath, Astro.site ?? 'https://hhaus.org');
+const apiOrigin = import.meta.env.PUBLIC_HHAUS_API_ORIGIN ?? 'https://api.hhaus.org';
+const supabaseOrigin = import.meta.env.PUBLIC_HHAUS_SUPABASE_ORIGIN ?? 'https://bihpugkzayenywfyajnr.supabase.co';
+const turnstileSiteKey = import.meta.env.PUBLIC_HHAUS_TURNSTILE_SITE_KEY ?? '';
+---
+<!doctype html>
+<html
+  lang="en"
+  data-api-origin={apiOrigin}
+  data-supabase-origin={supabaseOrigin}
+  data-turnstile-site-key={turnstileSiteKey}
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#18231d" />
+    <meta name="color-scheme" content="light" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={`${title} · HHaus Medellín`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <title>{title} · HHaus Medellín</title>
+    <script
+      src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+      async
+      defer></script>
+    <script type="module" src="/intake.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#intake-form">Skip to form</a>
+    <header class="intake-header">
+      <a class="intake-brand" href="/" aria-label="HHaus home">
+        <span class="intake-brand-mark">H</span>
+        <span>HHaus <em>Medellín</em></span>
+      </a>
+      <nav aria-label="Intake navigation">
+        <a href="/submit-pre-interest">Pre-interest</a>
+        <a href="/submit-application">Application</a>
+        <a class="account-link" href={`https://user.hhaus.org${authenticatedPath}`}>
+          Continue signed in
+        </a>
+      </nav>
+    </header>
+    <main>
+      <section class="intake-intro">
+        <p class="eyebrow">{eyebrow}</p>
+        <h1>{heading}</h1>
+        <p class="intro-copy">{description}</p>
+        <p class="account-note">
+          Already have an HHaus session? <a href={`https://user.hhaus.org${authenticatedPath}`}>
+            Use the prefilled signed-in form
+          </a>.
+        </p>
+      </section>
+      <slot />
+    </main>
+    <footer>
+      <span>HHaus Medellín · Founder residency</span>
+      <a href="/">Back to the house</a>
+    </footer>
+  </body>
+</html>

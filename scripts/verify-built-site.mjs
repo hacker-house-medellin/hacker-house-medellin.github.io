@@ -18,3 +18,12 @@ assert.ok(body.trim().length > 200, 'Astro output body is unexpectedly empty.');
 assert.doesNotMatch(html, /(?:src|href)=["'][^"']*\/src\//i, 'Built output must not reference source-only paths.');
 
 console.log('Verified built GitHub Pages artifact: head, metadata, CSS, and body are present.');
+
+for (const route of ['pre-register', 'submit-pre-interest', 'submit-application']) {
+  const routeHtml = readFileSync(new URL(`../dist/${route}/index.html`, import.meta.url), 'utf8');
+  assert.match(routeHtml, /id="intake-form"/i, `${route} must render an intake form.`);
+  assert.match(routeHtml, /https:\/\/user\.hhaus\.org/i, `${route} must offer the signed-in handoff.`);
+  assert.doesNotMatch(routeHtml, /SERVICE_ROLE|SECRET_KEY|AUTH_SERVICE_CREDENTIAL/i, `${route} leaked a server credential name.`);
+}
+
+console.log('Verified public pre-register, pre-interest, and application artifacts.');
