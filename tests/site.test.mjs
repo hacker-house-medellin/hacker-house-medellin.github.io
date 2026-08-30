@@ -39,6 +39,18 @@ test('landing page preserves its product-specific story', () => {
   assert.match(page, /<style>/);
 });
 
+test('ORES Chat remains an integrity-pinned footer-only enhancement', () => {
+  const footer = page.match(/<footer>[\s\S]*?<\/footer>/)?.[0] ?? '';
+  const beforeFooter = page.slice(0, page.indexOf('<footer>'));
+
+  assert.match(footer, /<ores-chat-footer-link context-id="hacker-house-medellin">/);
+  assert.match(footer, /href="https:\/\/ores-chat\.github\.io\/chat\/\?context=hacker-house-medellin"/);
+  assert.doesNotMatch(beforeFooter, /<ores-chat-footer-link/);
+  assert.match(page, /src="https:\/\/ores-chat\.github\.io\/components\/v1\/ores-chat-footer-link\.js"/);
+  assert.match(page, /integrity="sha256-jtetSlJDWLAWg2\+zQIZGUX71OYlIKkZ9sbPnFMup5SE="/);
+  assert.doesNotMatch(JSON.stringify(pkg.dependencies), /react/i);
+});
+
 test('CI and Pages use locked installs in test-before-build order', () => {
   for (const workflow of [ci, pages]) {
     assert.match(workflow, /npm ci --ignore-scripts --no-audit --no-fund/);

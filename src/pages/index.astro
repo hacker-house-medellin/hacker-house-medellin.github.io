@@ -14,6 +14,13 @@
     <meta property="og:url" content="https://hacker-house-medellin.github.io/" />
     <meta name="twitter:card" content="summary" />
     <title>Hacker House Medellín — A house that ships</title>
+    <script
+      is:inline
+      type="module"
+      src="https://ores-chat.github.io/components/v1/ores-chat-footer-link.js"
+      integrity="sha256-jtetSlJDWLAWg2+zQIZGUX71OYlIKkZ9sbPnFMup5SE="
+      crossorigin="anonymous"
+    ></script>
     <style>
 
 *{box-sizing:border-box}
@@ -48,7 +55,13 @@ footer{background:var(--ink);color:var(--chalk);padding:1rem clamp(1rem,3vw,3rem
         <div class="plan" id="house" aria-label="Illustrative house floor plan"><div class="room r1"><small>01 / street side</small><strong>Long table</strong><span>heads-down work</span></div><div class="room r2"><small>02 / courtyard</small><strong>Quiet rooms</strong><span>sleep is infrastructure</span></div><div class="room r3"><small>03 / shared</small><strong>Kitchen</strong><span>food, not networking theater</span></div><div class="room r4"><small>04</small><strong>Call<br/>booth</strong><span>close the door</span></div><div class="room r5"><small>05 / open air</small><strong>Roof lab</strong><span>demos · dinner · solder</span></div><div class="room r6"><strong>Medellín is outside the gate.</strong><span>walk it · learn it · contribute to it</span></div></div></section>
       <section class="board" id="day"><div class="day"><h2>Tuesday<br/>on the wall.</h2><ol class="schedule"><li><time>07:30</time><span>Quiet coffee. Nobody has to pitch anything.</span></li><li><time>10:00</time><span>Deep-work block; calls stay in the booths.</span></li><li><time>13:00</time><span>Shared lunch and a practical Spanish table.</span></li><li><time>17:30</time><span>Show one unfinished thing. Ask for one useful kind of help.</span></li><li><time>20:00</time><span>Open roof session with local builders and neighbors.</span></li></ol></div><div class="operating"><h2>Run the house, not a hype reel.</h2><dl><div><dt>Stays</dt><dd>Room type, dates, status, notes, and check-in state with a clear reservation boundary.</dd></div><div><dt>Work</dt><dd>Workspace plans, quiet hours, shared spaces, and enough operational structure to protect focus.</dd></div><div><dt>Community</dt><dd>Events and introductions are opt-in, practical, and connected to the city rather than replacing it.</dd></div></dl></div></section>
     </main>
-    <footer><span>Medellín, Colombia</span><span>Entrepreneur-focused coliving and coworking</span></footer>
+    <footer>
+      <span>Medellín, Colombia</span>
+      <span>Entrepreneur-focused coliving and coworking</span>
+      <ores-chat-footer-link context-id="hacker-house-medellin">
+        <a slot="link" href="https://ores-chat.github.io/chat/?context=hacker-house-medellin" rel="noopener noreferrer">Chat with the house</a>
+      </ores-chat-footer-link>
+    </footer>
 
 
   </body>
