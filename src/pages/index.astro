@@ -42,14 +42,47 @@ footer{background:var(--ink);color:var(--chalk);padding:1rem clamp(1rem,3vw,3rem
   <body>
     <a class="skip" href="#content">Skip to content</a>
 
-    <header><span class="house-mark" aria-hidden="true"></span><a class="brand" href="#top">Hacker House <span class="city">Medellín</span></a><nav aria-label="Primary"><a href="#house">The house</a><a href="#day">A day</a><a href="https://github.com/hacker-house-medellin">Source</a></nav></header>
+    <header class="fleet-nav-enhanced"><span class="house-mark" aria-hidden="true"></span><a class="brand" href="#top">Hacker House <span class="city">Medellín</span></a><nav class="fleet-desktop-nav" aria-label="Primary"><a href="#house">The house</a><a href="#day">A day</a><a href="https://github.com/hacker-house-medellin">Source</a><a href="#access">Access</a><a href="https://user.hacker-house-medellin.github.io/">Log in</a><a href="https://auth.hacker-house-medellin.github.io/">Sign up</a></nav><details class="fleet-mobile-nav"><summary>Menu</summary><nav aria-label="Mobile navigation"><a href="#access">Access</a><a href="https://user.hacker-house-medellin.github.io/">User log in</a><a href="https://org.hacker-house-medellin.github.io/">Organization access</a><a href="https://auth.hacker-house-medellin.github.io/">Sign up</a><a href="https://github.com/hacker-house-medellin">Source</a></nav></details></header>
     <main id="content">
       <section class="hero" id="top"><div class="hero-copy"><span class="stamp">coliving + coworking + community</span><div><h1>A house<br/>that ships.</h1><p>Live with people building real companies, tools, art, and experiments—then still have a door to close when the workday ends.</p></div><div class="actions"><a href="https://github.com/hacker-house-medellin/hhm-api">Reservation API</a><a href="https://github.com/hacker-house-medellin/hacker-house-medellin.github.io">Site source</a></div></div>
         <div class="plan" id="house" aria-label="Illustrative house floor plan"><div class="room r1"><small>01 / street side</small><strong>Long table</strong><span>heads-down work</span></div><div class="room r2"><small>02 / courtyard</small><strong>Quiet rooms</strong><span>sleep is infrastructure</span></div><div class="room r3"><small>03 / shared</small><strong>Kitchen</strong><span>food, not networking theater</span></div><div class="room r4"><small>04</small><strong>Call<br/>booth</strong><span>close the door</span></div><div class="room r5"><small>05 / open air</small><strong>Roof lab</strong><span>demos · dinner · solder</span></div><div class="room r6"><strong>Medellín is outside the gate.</strong><span>walk it · learn it · contribute to it</span></div></div></section>
       <section class="board" id="day"><div class="day"><h2>Tuesday<br/>on the wall.</h2><ol class="schedule"><li><time>07:30</time><span>Quiet coffee. Nobody has to pitch anything.</span></li><li><time>10:00</time><span>Deep-work block; calls stay in the booths.</span></li><li><time>13:00</time><span>Shared lunch and a practical Spanish table.</span></li><li><time>17:30</time><span>Show one unfinished thing. Ask for one useful kind of help.</span></li><li><time>20:00</time><span>Open roof session with local builders and neighbors.</span></li></ol></div><div class="operating"><h2>Run the house, not a hype reel.</h2><dl><div><dt>Stays</dt><dd>Room type, dates, status, notes, and check-in state with a clear reservation boundary.</dd></div><div><dt>Work</dt><dd>Workspace plans, quiet hours, shared spaces, and enough operational structure to protect focus.</dd></div><div><dt>Community</dt><dd>Events and introductions are opt-in, practical, and connected to the city rather than replacing it.</dd></div></dl></div></section>
-    </main>
+
+<section class="fleet-access" id="access" aria-labelledby="fleet-access-title"><div class="fleet-access-head"><p class="fleet-access-kicker">Product access</p><h2 id="fleet-access-title">Public context here. Account work in the right application.</h2><p class="fleet-access-intro">Hacker House Medellín's marketing site remains public. Authenticated resident, coworking, and community coordination is separated into individual, organization, and account-creation boundaries.</p></div><div class="fleet-access-grid"><article><span>INDIVIDUAL</span><h3>Your workspace</h3><p>Return to personal activity, saved context, and work owned by your account.</p><a href="https://user.hacker-house-medellin.github.io/">User log in ↗</a></article><article><span>ORGANIZATION</span><h3>Team operations</h3><p>Open shared membership, policy, and organization-scoped work.</p><a href="https://org.hacker-house-medellin.github.io/">Organization access ↗</a></article><article><span>SHARED AUTH</span><h3>Create an account</h3><p>Start through the dedicated authentication boundary before entering the product.</p><a href="https://auth.hacker-house-medellin.github.io/">Sign up ↗</a></article></div></section>
+</main>
     <footer><span>Medellín, Colombia</span><span>Entrepreneur-focused coliving and coworking</span></footer>
 
 
   </body>
 </html>
+
+<style>
+  .fleet-nav-enhanced { position: sticky !important; top: 0; z-index: 200; isolation: isolate; }
+  .fleet-mobile-nav { display: none; position: relative; margin-left: auto; }
+  .fleet-mobile-nav summary { cursor: pointer; list-style: none; padding: .62rem .8rem; border: 1px solid currentColor; border-radius: .45rem; font: 700 .72rem/1 system-ui, sans-serif; letter-spacing: .06em; text-transform: uppercase; }
+  .fleet-mobile-nav summary::-webkit-details-marker { display: none; }
+  .fleet-mobile-nav nav { position: absolute; right: 0; top: calc(100% + .55rem); min-width: 15rem; display: grid; gap: .25rem; padding: .75rem; background: #111827; color: #fff; border: 1px solid rgba(255,255,255,.18); box-shadow: 0 1.4rem 3rem rgba(0,0,0,.3); }
+  .fleet-mobile-nav a { padding: .7rem .8rem; color: inherit; text-decoration: none; }
+  @media (max-width: 760px) {
+    .fleet-desktop-nav { display: none !important; }
+    .fleet-mobile-nav { display: block; }
+  }
+</style>
+
+<style>
+  .fleet-access { padding: clamp(3.5rem, 8vw, 7rem) max(4vw, calc((100% - 76rem) / 2)); border-block: 1px solid currentColor; }
+  .fleet-access-head { max-width: 48rem; }
+  .fleet-access-kicker { margin: 0 0 .8rem; font: 750 .72rem/1.4 ui-monospace, monospace; letter-spacing: .12em; text-transform: uppercase; opacity: .7; }
+  .fleet-access h2 { margin: 0; font-size: clamp(2rem, 4vw, 4rem); line-height: 1.02; letter-spacing: -.04em; text-wrap: balance; }
+  .fleet-access-intro { max-width: 46rem; margin: 1.25rem 0 0; font-size: 1.05rem; line-height: 1.7; opacity: .78; }
+  .fleet-access-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.5rem; }
+  .fleet-access-grid article { padding: 1.5rem; border: 1px solid currentColor; border-radius: .8rem; }
+  .fleet-access-grid span { font: 750 .68rem/1 ui-monospace, monospace; letter-spacing: .1em; opacity: .66; }
+  .fleet-access-grid h3 { margin: 1.5rem 0 .65rem; font-size: 1.15rem; }
+  .fleet-access-grid p { min-height: 4.8rem; margin: 0 0 1.25rem; line-height: 1.55; opacity: .76; }
+  .fleet-access-grid a { font-weight: 750; color: inherit; text-underline-offset: .25rem; }
+  @media (max-width: 760px) {
+    .fleet-access-grid { grid-template-columns: 1fr; }
+    .fleet-access-grid p { min-height: 0; }
+  }
+</style>
