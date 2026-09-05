@@ -14,6 +14,13 @@
     <meta property="og:url" content="https://hacker-house-medellin.github.io/" />
     <meta name="twitter:card" content="summary" />
     <title>Hacker House Medellín — A house that ships</title>
+    <script
+      is:inline
+      type="module"
+      src="https://ores-chat.github.io/components/v1/ores-chat-footer-link.js"
+      integrity="sha256-jtetSlJDWLAWg2+zQIZGUX71OYlIKkZ9sbPnFMup5SE="
+      crossorigin="anonymous"
+    ></script>
     <style>
 
 *{box-sizing:border-box}
@@ -50,7 +57,11 @@ footer{background:var(--ink);color:var(--chalk);padding:1rem clamp(1rem,3vw,3rem
 
 <section class="fleet-access" id="access" aria-labelledby="fleet-access-title"><div class="fleet-access-head"><p class="fleet-access-kicker">Product access</p><h2 id="fleet-access-title">Public context here. Account work in the right application.</h2><p class="fleet-access-intro">Hacker House Medellín's marketing site remains public. Authenticated resident, coworking, and community coordination is separated into individual, organization, and account-creation boundaries.</p></div><div class="fleet-access-grid"><article><span>INDIVIDUAL</span><h3>Your workspace</h3><p>Return to personal activity, saved context, and work owned by your account.</p><a href="https://user.hacker-house-medellin.github.io/">User log in ↗</a></article><article><span>ORGANIZATION</span><h3>Team operations</h3><p>Open shared membership, policy, and organization-scoped work.</p><a href="https://org.hacker-house-medellin.github.io/">Organization access ↗</a></article><article><span>SHARED AUTH</span><h3>Create an account</h3><p>Start through the dedicated authentication boundary before entering the product.</p><a href="https://auth.hacker-house-medellin.github.io/">Sign up ↗</a></article></div></section>
 </main>
-    <footer><span>Medellín, Colombia</span><span>Entrepreneur-focused coliving and coworking</span></footer>
+    <footer><span>Medellín, Colombia</span><span>Entrepreneur-focused coliving and coworking</span>
+      <ores-chat-footer-link context-id="hacker-house-medellin">
+        <a slot="link" href="https://ores-chat.github.io/chat/?context=hacker-house-medellin" rel="noopener noreferrer">Chat with the house</a>
+      </ores-chat-footer-link>
+    </footer>
 
 
   </body>
