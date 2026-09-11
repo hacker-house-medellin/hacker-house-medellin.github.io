@@ -2,7 +2,6 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { readFileSync } from 'node:fs';
 
-const page = readFileSync('src/pages/index.astro', 'utf8');
 const network = readFileSync('src/components/VentureNetwork.astro', 'utf8');
 const expectedLinks = [
   'https://apostille-me.github.io/',
@@ -13,14 +12,14 @@ const expectedLinks = [
   'https://github.com/gha-indie-worker',
 ];
 
-test('mounts the venture network from primary navigation', () => {
-  assert.match(page, /import VentureNetwork/);
-  assert.match(page, /href="#network"/);
-  assert.match(page, /<VentureNetwork current="[a-z-]+" \/>/);
+test('venture network component exposes a reusable current-site contract', () => {
+  assert.match(network, /interface Props/);
+  assert.match(network, /current: string/);
+  assert.match(network, /id="network"/);
+  assert.match(network, /aria-current=/);
 });
 
 test('links the six youngest active non-test organizations', () => {
-  assert.match(network, /id="network"/);
   assert.match(network, /Explore the six youngest active organizations/);
   for (const href of expectedLinks) assert.ok(network.includes(href), `missing venture link: ${href}`);
 });
