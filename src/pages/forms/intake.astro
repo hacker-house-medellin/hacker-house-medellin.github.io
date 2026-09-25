@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Start the Hacker House Medellín founder residency intake using the canonical H/HAUS application flow." />
+    <meta name="theme-color" content="#164d38" />
+    <link rel="canonical" href="https://hacker-house-medellin.github.io/forms/intake/" />
+    <title>Founder intake — Hacker House Medellín</title>
+    <style>
+      :root { --concrete:#d7d1c4; --ink:#16201b; --green:#164d38; --orange:#e45b2f; --chalk:#f3efe5; }
+      * { box-sizing: border-box; }
+      body { margin: 0; min-width: 320px; background: var(--concrete); color: var(--ink); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+      main { min-height: 100vh; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); }
+      .intro { padding: clamp(2rem, 7vw, 7rem); background: var(--green); color: var(--chalk); display: flex; flex-direction: column; justify-content: space-between; gap: 4rem; }
+      .stamp { align-self: flex-start; border: 2px solid currentColor; padding: .45rem .65rem; text-transform: uppercase; font-size: .72rem; transform: rotate(-2deg); }
+      h1 { margin: 0; font-family: Arial Black, Impact, sans-serif; font-size: clamp(4rem, 10vw, 9rem); line-height: .8; letter-spacing: -.07em; text-transform: uppercase; }
+      .intro p { max-width: 36rem; font-family: Georgia, serif; font-size: clamp(1.1rem, 2vw, 1.6rem); line-height: 1.5; }
+      .questions { padding: clamp(2rem, 6vw, 6rem); background: var(--chalk); display: flex; flex-direction: column; justify-content: center; }
+      .questions h2 { margin: 0 0 1.5rem; font-family: Arial Black, Impact, sans-serif; font-size: clamp(2.5rem, 5vw, 5rem); line-height: .9; letter-spacing: -.05em; text-transform: uppercase; }
+      ol { margin: 0 0 2rem; padding: 0; list-style: none; counter-reset: founder; }
+      li { counter-increment: founder; display: grid; grid-template-columns: 3rem 1fr; gap: 1rem; padding: 1rem 0; border-top: 2px solid var(--ink); line-height: 1.45; }
+      li::before { content: "0" counter(founder); color: var(--orange); font-weight: 900; }
+      .cta { display: inline-block; align-self: flex-start; padding: .9rem 1.1rem; background: var(--orange); color: #fff; border: 2px solid var(--ink); text-decoration: none; text-transform: uppercase; font-weight: 900; }
+      .note { margin-top: 1rem; font-size: .78rem; line-height: 1.5; }
+      .note a { color: inherit; }
+      @media (max-width: 820px) { main { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="intro">
+        <span class="stamp">Founder residency · Medellín</span>
+        <div>
+          <h1>Bring the<br />unfinished<br />thing.</h1>
+          <p>Hacker House Medellín uses the canonical H/HAUS residency application rather than maintaining a second sensitive intake form. Your application travels through the shared H/HAUS validation, retry, and persistence boundary.</p>
+        </div>
+      </section>
+      <section class="questions" aria-labelledby="founder-prompts">
+        <h2 id="founder-prompts">What we want to understand.</h2>
+        <ol>
+          <li><span><strong>Your entrepreneurship idea.</strong> What problem are you solving and what are you trying to build during the residency?</span></li>
+          <li><span><strong>Your audience.</strong> Who experiences the problem, who uses the product, and who pays?</span></li>
+          <li><span><strong>Your total market.</strong> How large could the opportunity be, and what assumptions support the estimate?</span></li>
+          <li><span><strong>Your cross-pollination case.</strong> How would living with other builders accelerate the work, and what knowledge, feedback, introductions, or energy would you contribute back?</span></li>
+        </ol>
+        <a class="cta" href="https://hhaus.org/forms/intake/">Open the canonical founder intake ↗</a>
+        <p class="note">Already have a member session? Continue through the <a href="https://user.hacker-house-medellin.github.io/">Hacker House Medellín member portal</a>.</p>
+      </section>
+    </main>
+  </body>
+</html>
