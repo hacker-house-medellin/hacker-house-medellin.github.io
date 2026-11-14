@@ -1,0 +1,68 @@
+---
+const title = "Hacker House Medellín — Un espacio para construir";
+---
+<!doctype html>
+<html lang="es-CO">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Convivencia, trabajo compartido y comunidad para personas que crean proyectos en Medellín, Colombia." />
+    <meta name="theme-color" content="#164d38" />
+    <link rel="canonical" href="https://hacker-house-medellin.github.io/es/" />
+    <link rel="alternate" hreflang="en" href="https://hacker-house-medellin.github.io/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <style>
+      :root { color-scheme: light; font-family: system-ui, sans-serif; background: #f3efe5; color: #16201b; }
+      * { box-sizing: border-box; }
+      body { margin: 0; }
+      a { color: inherit; }
+      a:focus-visible { outline: 3px solid #e45b2f; outline-offset: 3px; }
+      header, main, footer { max-width: 70rem; margin: auto; padding: clamp(1.2rem, 4vw, 3rem); }
+      header { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+      nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+      h1 { font-size: clamp(2.5rem, 8vw, 5rem); line-height: 1.08; margin: 1rem 0; }
+      h2 { font-size: clamp(1.5rem, 4vw, 2rem); }
+      p { max-width: 62ch; line-height: 1.6; }
+      .intro { background: #164d38; color: #f3efe5; padding: clamp(1.2rem, 5vw, 4rem); border-radius: .5rem; }
+      .actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.7rem; }
+      .actions a { display: inline-block; border: 2px solid currentColor; border-radius: .25rem; padding: .85rem 1rem; text-decoration: none; font-weight: 700; }
+      section + section { margin-top: 2.5rem; }
+      footer { border-top: 1px solid #758379; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <strong>Hacker House Medellín</strong>
+      <nav aria-label="Navegación principal">
+        <a href="#comunidad">Comunidad</a>
+        <a href="#solicitud">Solicitudes</a>
+        <a href="/" hreflang="en" lang="en">English</a>
+      </nav>
+    </header>
+    <main id="contenido">
+      <section class="intro" aria-labelledby="titulo">
+        <h1 id="titulo">Un lugar para vivir, trabajar y crear.</h1>
+        <p>Conoce una comunidad de personas que desarrollan empresas, herramientas, arte y experimentos en Medellín. El trabajo compartido también necesita espacios de descanso.</p>
+        <div class="actions">
+          <a href="#solicitud">Conoce las opciones</a>
+          <a href="https://github.com/hacker-house-medellin">Ver los proyectos</a>
+        </div>
+      </section>
+      <section id="comunidad" aria-labelledby="comunidad-titulo">
+        <h2 id="comunidad-titulo">Comunidad con propósito</h2>
+        <p>Espacios para colaborar, conversar y participar en la ciudad, sin sustituir la privacidad ni el tiempo de concentración de cada persona.</p>
+      </section>
+      <section id="solicitud" aria-labelledby="solicitud-titulo">
+        <h2 id="solicitud-titulo">Expresa tu interés</h2>
+        <p>Puedes comenzar con un formulario breve o completar la solicitud de residencia. Los formularios están alojados en el portal H/HAUS y pueden tener su propio idioma.</p>
+        <div class="actions">
+          <a href="https://hhaus.org/submit-pre-interest/">Formulario de interés</a>
+          <a href="https://hhaus.org/submit-application/">Solicitud completa</a>
+          <a href="https://user.hacker-house-medellin.github.io/">Portal de usuario</a>
+        </div>
+      </section>
+    </main>
+    <footer><small>Medellín, Colombia · Convivencia y coworking</small></footer>
+  </body>
+</html>
